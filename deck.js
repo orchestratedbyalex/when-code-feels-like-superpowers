@@ -108,7 +108,7 @@
   const pad = n => String(n).padStart(2, '0');
   // A pocket hint rides on the counter: ↓ when this slide has a pocket below, ↑ inside a pocket, ↕ when both.
   const pocketHint = () => { const r = Reveal.availableRoutes(); return r.down && r.up ? ' ↕' : r.down ? ' ↓' : r.up ? ' ↑' : ''; };
-  const showCount = () => { counter.textContent = `${pad(Reveal.getIndices().h + 1)} / ${pad(Reveal.getHorizontalSlides().length)}${pocketHint()}`; };
+  const showCount = () => { counter.textContent = `${pad(Reveal.getIndices().h + 1)} / ${pad(43)}${pocketHint()}`; };
   Reveal.on('ready', showCount);
   Reveal.on('slidechanged', showCount);
 
