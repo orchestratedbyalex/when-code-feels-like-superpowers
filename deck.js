@@ -70,18 +70,21 @@
       ['wire', 1, '2', 1], ['wire', 1, '4', 3], ['wire', 1, '6', 5], ['wire', 1, '8', 7],
       ['vwire elbow', 2, '9', 9], ['wire rev join', 3, '4 / 9', 10, 'validated write → atomic replacement'], ['wire rev', 3, '2', 13],
     ] },
-    yt: { rows: 5, nodes: [
-      ['you',  'a YouTube link', '+ a command, maybe',        1, 1, 0],
-      ['ours', 'Telegram',       'you message the bot',       1, 3, 2],
-      ['ours', 'n8n',            'the YoutubeAnalyser flow',  1, 5, 4],
-      ['ours', 'yt-transcript',  'grabs the captions',        1, 7, 6],
-      ['ai',   'Fabric',         'Gemini · AI patterns analyse it', 1, 9, 8],
-      ['ours', 'yt-research',    'five commands · a 7-day memory', 3, 3, 12],
-      ['ai',   'Codex',          'GPT-5.6 · searches the web', 3, 1, 14],
-      ['you',  'your chat',      'the answer, back in Telegram', 5, 1, 16],
+    yt: { rows: 3, nodes: [
+      ['you',  'iPhone',       'Shortcut · a-Shell fetches captions', 1, 1, 0],
+      ['ours', 'HTTPS upload', 'paired key · caption text',          1, 3, 2],
+      ['ours', 'VPS queue',    'saved jobs · retries',                1, 5, 4],
+      ['ai',   'Codex',        'summarizes the captions',             1, 7, 6],
+      ['you',  'Telegram',     'summary + buttons',                   1, 9, 8],
+      ['you',  'Your reply',   'Verify · Roadmap · Visualize',        3, 9, 10],
+      ['ours', 'n8n',          'routes follow-ups',                   3, 7, 12],
+      ['ours', 'yt-research',  'saved captions · 7 days',             3, 5, 14],
+      ['ai',   'Codex',        'Verify: claims + web sources',        3, 3, 16],
+      ['you',  'You check',    'timestamp + source passage',          3, 1, 18],
     ], wires: [
       ['wire', 1, '2', 1], ['wire', 1, '4', 3], ['wire', 1, '6', 5], ['wire', 1, '8', 7],
-      ['vwire elbow', 2, '9', 9], ['wire rev join', 3, '4 / 9', 10, 'and for /verify and /roadmap'], ['wire rev', 3, '2', 13], ['vwire down', 4, '1', 15],
+      ['vwire down', 2, '9', 9], ['wire rev', 3, '8', 11], ['wire rev', 3, '6', 13],
+      ['wire rev', 3, '4', 15], ['wire rev', 3, '2', 17],
     ] },
   };
   document.querySelectorAll('.arch[data-diagram]').forEach(a => {
