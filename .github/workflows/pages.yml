@@ -1,0 +1,36 @@
+name: Publish audience slides
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check audience-only export
+        run: python3 scripts/validate.py .
+      - uses: actions/configure-pages@v5
+      - name: Prepare site artifact
+        run: |
+          mkdir _site
+          cp index.html deck.css deck.js cursor.js .nojekyll _site/
+          cp -R assets media fonts vendor _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
