@@ -7,7 +7,7 @@ from urllib.parse import urlsplit, unquote
 
 ROOT=Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve()
 BANNED=re.compile(r'(^|/)(learn|rehearsal|audience-collector|\.env|speaker-notes|notes)([./-]|$)|\.bak(?:\.|$)|\.map$|\.pptx$',re.I)
-TOP={'index.html','deck.css','deck.js','cursor.js','README.md','.nojekyll','public-manifest.json','THIRD_PARTY.md','scripts/validate.py','.github/workflows/pages.yml'}
+TOP={'audience-video.js','index.html','deck.css','deck.js','cursor.js','README.md','.nojekyll','public-manifest.json','THIRD_PARTY.md','scripts/validate.py','.github/workflows/pages.yml'}
 def check(condition,message):
  if not condition:raise SystemExit('PUBLIC EXPORT CHECK FAILED: '+message)
 def local(ref,base):

@@ -264,3 +264,20 @@ html.theme-gold .legend .ai::before { background: var(--cursor); border-color: v
 .reveal .conference .conference-rating { position:absolute; right:3em; bottom:3em; font-size:1.7em; text-align:right; color:#fff; }
 .reveal .conference .conference-hashtag { position:absolute; right:3em; bottom:2.8em; font-size:1.7em; color:#fff; }
 body:has(.conference.present) #counter { visibility:hidden; }
+
+/* Public audience video: choose to watch or skip, with native player controls. */
+.audience-film .video-intro { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; padding:5vw; background:var(--bg); }
+.audience-film .video-intro[hidden] { display:none; }
+.audience-film .video-copy { width:86vw; max-width:1300px; }
+.reveal .audience-film .video-kicker { font:500 clamp(12px,1.15vw,22px)/1.5 "JetBrains Mono",monospace; text-transform:uppercase; letter-spacing:.08em; color:var(--cursor); margin-bottom:1.4em; }
+.reveal .audience-film h2 { font-size:clamp(32px,5.4vw,96px); font-weight:500; line-height:1.05; letter-spacing:-.045em; }
+.reveal .audience-film .video-description { font-size:clamp(16px,1.65vw,30px); line-height:1.5; max-width:51ch; color:var(--ink-soft); margin-top:1.2em; }
+.audience-film .video-actions { display:flex; flex-wrap:wrap; gap:16px; margin-top:clamp(20px,2.6vw,48px); }
+.audience-film button { font:600 clamp(16px,1.25vw,24px)/1.3 "Schibsted Grotesk",sans-serif; padding:.85em 1.2em; min-height:48px; border:1px solid var(--line); border-radius:8px; cursor:pointer; background:transparent; color:var(--ink); }
+.audience-film [data-play-film] { background:var(--cursor); color:#090909; border-color:var(--cursor); }
+.audience-film [data-play-film] span { margin-right:.6em; }
+.audience-film button:hover { filter:brightness(1.15); }
+.audience-film button:focus-visible { outline:3px solid var(--ink); outline-offset:5px; }
+.reveal .audience-film .video-hint, .reveal .audience-film .video-status { font-size:clamp(12px,1vw,18px); line-height:1.5; margin-top:1.1em; color:var(--dim); }
+.reveal .audience-film .missing { position:static; translate:none; font-size:clamp(14px,1.25vw,22px); margin-top:1em; color:var(--ink); }
+.audience-film .missing a { color:var(--cursor); }

@@ -13,7 +13,7 @@ The talk follows personal projects built with coding agents, live demonstrations
 - **M:** play or pause the current song or film. Browsers may require this first interaction before audio plays.
 - **F:** fullscreen. **Esc:** slide overview. **P:** change palette. **?:** controls.
 
-The slides use a 16:9 layout. Recorded audio and video are included. Live demonstrations are represented by their slides and recorded examples; this repository does not run those applications. The Spotify embed needs an internet connection.
+The slides use a 16:9 layout. Recorded audio and video are included. Slide 23 offers the full 3:04 EMX walkthrough: choose **Play full video** to watch, or **Skip video** to continue. It does not autoplay, and there is no shorter-cut alternative below it. Live demonstrations are represented by their slides and recorded examples; this repository does not run those applications. The Spotify embed needs an internet connection.
 
 To view locally, download or clone this repository and run:
 

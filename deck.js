@@ -217,10 +217,10 @@
     const active = !inNotesWindow() && !Reveal.isOverview() ? activeFilm() : null;
     // Stop every other source before starting the active film.
     films.forEach(f => { if (f !== active) { f.pause(); if (f.currentTime) f.currentTime = 0; } });
-    if (active) { stopSongNow(); active.currentTime = 0; active.play().catch(err => console.warn('film blocked:', err)); }
+    if (active) { stopSongNow(); active.currentTime = 0; active.pause(); }
   }
   Reveal.on('ready', () => {
-    if (window === window.top && !inNotesWindow()) { const f = films[0]; if(f) { f.preload = 'auto'; f.load(); } }
+    if (window === window.top && !inNotesWindow()) { const f = films[0]; if(f) f.preload = 'none'; }
   });
   Reveal.on('ready', syncFilm); Reveal.on('slidechanged', syncFilm);
   Reveal.on('overviewshown', () => { films.forEach(f => f.pause()); stopSongNow(); });
