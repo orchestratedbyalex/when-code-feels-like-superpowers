@@ -131,6 +131,7 @@ html, body, .reveal, .reveal .slides { background: var(--bg); }
   box-shadow: 0 0 0 .12em var(--line), 0 2em 5em -1em rgba(0, 0, 0, .8); background: var(--bg); }
 .phone .device img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .phone .device .slot { position: absolute; left: 4.9%; top: 36.75%; width: 2.1%; height: 2.15%; }
+#slide-02 .device .slot { translate: 1px -1px; }
 .present.phone .device { animation: fade 1.2s ease .2s backwards; }
 .present.phone .copy { animation: rise .7s cubic-bezier(.16, 1, .3, 1) backwards; }
 /* 24: the hand-built screen, JetBrains Mono on --bg; its own caret is gone, the stage cursor takes the prompt */
