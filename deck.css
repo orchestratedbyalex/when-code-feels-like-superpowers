@@ -287,3 +287,7 @@ body:has(.conference.present) #counter { visibility:hidden; }
 /* Quiet release identifier, shared by every slide. */
 #deck-version { position:fixed; left:1.2vw; bottom:.9vw; z-index:6; font:400 9px/1 "JetBrains Mono",monospace; color:var(--ink); opacity:.23; cursor:default; }
 #deck-version:hover { opacity:.7; }
+
+/* Slide 22: name the development workflow before its principles. */
+#slide-17c .workflow-title { font: 500 2.2em/1.3 "Schibsted Grotesk", sans-serif; letter-spacing: -.02em; max-width: none; margin-bottom: 1em; color: var(--ink-soft); }
+#slide-17c .workflow-principles { font-weight: 500; font-size: 5.4em; line-height: 1.1; letter-spacing: -.04em; max-width: 15.5em; text-wrap: balance; }
