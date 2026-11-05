@@ -108,10 +108,11 @@
 
   // --- counter: horizontal position over horizontal total ---
   const counter = document.getElementById('counter');
+  const horizontalTotal = document.querySelectorAll('.slides > section').length;
   const pad = n => String(n).padStart(2, '0');
   // A pocket hint rides on the counter: ↓ when this slide has a pocket below, ↑ inside a pocket, ↕ when both.
   const pocketHint = () => { const r = Reveal.availableRoutes(); return r.down && r.up ? ' ↕' : r.down ? ' ↓' : r.up ? ' ↑' : ''; };
-  const showCount = () => { counter.textContent = `${pad(Reveal.getIndices().h + 1)} / ${pad(43)}${pocketHint()}`; };
+  const showCount = () => { counter.textContent = `${pad(Reveal.getIndices().h + 1)} / ${pad(horizontalTotal)}${pocketHint()}`; };
   Reveal.on('ready', showCount);
   Reveal.on('slidechanged', showCount);
 
@@ -206,7 +207,7 @@
       }).catch(err => console.warn('play blocked:', err));
     } else fadeOutAndPause();
   }
-  // Films: the short main-route cut and optional full recording share one lifecycle.
+  // Full film: playback starts only on an explicit viewer action.
   const films = [...document.querySelectorAll('video[data-film]')];
   const activeFilm = () => films.find(f => Reveal.getCurrentSlide()?.contains(f));
   const onFilm = () => !!activeFilm();
@@ -218,7 +219,7 @@
   }
   function syncFilm() {
     const active = !inNotesWindow() && !Reveal.isOverview() ? activeFilm() : null;
-    // Stop every other source before starting the active film.
+    // Pause/reset on navigation; the Play button or M starts playback.
     films.forEach(f => { if (f !== active) { f.pause(); if (f.currentTime) f.currentTime = 0; } });
     if (active) { stopSongNow(); active.currentTime = 0; active.pause(); }
   }
