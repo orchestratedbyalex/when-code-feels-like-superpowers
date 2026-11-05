@@ -296,3 +296,10 @@ body:has(.conference.present) #counter { visibility:hidden; }
 #slide-17e .story-headline { font-size: 7.4em; font-weight: 500; line-height: 1.05; letter-spacing: -.04em; }
 #slide-17e .q { font-size: 3em; max-width: 25em; color: var(--ink-soft); margin-top: .5em; }
 #slide-17e .a { font-size: 2.5em; color: var(--dim); }
+
+/* Slide 16: introduce only the song the audience has heard so far. */
+#slide-06 .song-steps { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 6em; align-self: center; list-style: none; margin: 0; padding: 0; }
+#slide-06 .song-steps li { position: relative; border-top: 1px solid var(--line); padding-top: 2em; }
+#slide-06 .step-number { display: block; color: var(--dim); font-size: 2em; margin-bottom: 1em; }
+#slide-06 .song-steps strong { display: block; font-size: 4.1em; font-weight: 500; line-height: 1.2; letter-spacing: -.035em; }
+#slide-06 .song-steps li:not(:last-child)::after { content: '→'; position: absolute; right: -1.2em; top: 1.8em; font-size: 3em; color: var(--cursor); }
