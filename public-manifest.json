@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "slides": 52,
+  "slides": 51,
   "files": {
     ".github/workflows/pages.yml": "44e751cdbeff26b56322ba89b4fac2567a30aa6f8d8b46f245b4f8afe55b14f3",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -27,7 +27,7 @@
     "fonts/newsreader-latin-opsz-normal.woff2": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101",
     "fonts/schibsted/OFL.txt": "3b4f3063b6ac7c1e403e2c4a5e8ef3a58190ff83ed7b15af66511858699139ce",
     "fonts/schibsted-grotesk-latin-wght-normal.woff2": "4c8b93f431d462c696e12b9d6a033feb3394d36e66e781357c496b95d8a75e05",
-    "index.html": "95f8b4f3663bf3d4fcc5285fab2c690eb0e6a36fe79b3c40c81b49effa2b4a4a",
+    "index.html": "eeb0ecdde0699bac9f5fb76fecd994d0814b45244dd1b3722fbb72080e8e31df",
     "media/conference/closing.jpg": "2a741392da6e6de1e6b378c544ec11d0112069be1cf714db850b2989f1f14164",
     "media/conference/opening.jpg": "8289ff959a12d38ccaa7cf259af9f3369ffaf45fea93e96568df38491672afc9",
     "media/stage-recorded.png": "f7048941ff80a256a42cd5ed3e88ca7760e61dbe61e37df8726436d4a0b5f495",
