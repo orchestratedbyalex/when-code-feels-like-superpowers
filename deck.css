@@ -143,6 +143,7 @@ html, body, .reveal, .reveal .slides { background: var(--bg); }
 /* 05: the EMX mark in ink, on the meta line */
 .logo { position: absolute; left: 7em; bottom: 4.4em; width: 9.6em; height: 3.2em; background: var(--ink);
   -webkit-mask: url(assets/emx-logo.svg) left center / contain no-repeat; mask: url(assets/emx-logo.svg) left center / contain no-repeat; }
+#slide-05 .logo { left: auto; right: 7em; top: 5em; bottom: auto; width: 20em; height: 15em; }
 .present .logo { animation: fade 1.2s ease 1s backwards; }
 
 /* ---- beat (09–11): the numeral swells with the bass; the cursor is a level meter beside it ---- */
