@@ -283,3 +283,7 @@ body:has(.conference.present) #counter { visibility:hidden; }
 .reveal .audience-film .video-hint, .reveal .audience-film .video-status { font-size:clamp(12px,1vw,18px); line-height:1.5; margin-top:1.1em; color:var(--dim); }
 .reveal .audience-film .missing { position:static; translate:none; font-size:clamp(14px,1.25vw,22px); margin-top:1em; color:var(--ink); }
 .audience-film .missing a { color:var(--cursor); }
+
+/* Quiet release identifier, shared by every slide. */
+#deck-version { position:fixed; left:1.2vw; bottom:.9vw; z-index:6; font:400 9px/1 "JetBrains Mono",monospace; color:var(--ink); opacity:.23; cursor:default; }
+#deck-version:hover { opacity:.7; }
