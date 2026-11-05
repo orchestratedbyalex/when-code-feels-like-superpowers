@@ -1,14 +1,13 @@
 /* ===== One cursor — deck.css ===== */
-@font-face { font-family: "Schibsted Grotesk"; src: url(fonts/schibsted-grotesk-latin-wght-normal.woff2) format("woff2"); font-weight: 400 900; font-display: block; }
 @font-face { font-family: "Newsreader"; src: url(fonts/newsreader-latin-opsz-normal.woff2) format("woff2"); font-weight: 200 800; font-display: block; }
 @font-face { font-family: "Newsreader"; src: url(fonts/newsreader-latin-opsz-italic.woff2) format("woff2"); font-weight: 200 800; font-style: italic; font-display: block; }
 @font-face { font-family: "JetBrains Mono"; src: url(fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2"); font-weight: 100 800; font-display: block; }
 
-:root { --bg: #000000; --ink: #f5f3ee; --ink-soft: #cfcac0; --dim: #8e8c87; --line: #55534f; --cursor: #ff4d1f; }
+:root { --font-sans: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --bg: #000000; --ink: #f5f3ee; --ink-soft: #cfcac0; --dim: #8e8c87; --line: #55534f; --cursor: #ff4d1f; }
 html.theme-gold { --bg: #070b14; --ink: #f4ecd8; --ink-soft: #d9d2c0; --dim: #9ca3b8; --line: #4d566e; --cursor: #e9b44c; }
 
 html, body, .reveal, .reveal .slides { background: var(--bg); }
-.reveal { --b: 0.8; color: var(--ink); font-family: "Schibsted Grotesk", sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.reveal { --b: 0.8; color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 .reveal .slides { text-align: left; }
 .reveal .slides section, .reveal .slides section > section { padding: 0; top: 0; height: 100%; }
 .reveal .controls, .reveal .progress { display: none; }
@@ -236,8 +235,8 @@ html.theme-gold .legend .ai::before { background: var(--cursor); border-color: v
 .dependency .edges { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
 .dependency rect { fill: var(--bg); stroke: var(--line); stroke-width: 1.4; rx: 7; }
 .dependency .result { stroke: var(--cursor); stroke-width: 2; }
-.dependency .box text { fill: var(--ink); text-anchor: middle; font: 600 21px "Schibsted Grotesk",sans-serif; }
-.dependency .labels { fill: var(--ink-soft); font: 18px "Schibsted Grotesk",sans-serif; }
+.dependency .box text { fill: var(--ink); text-anchor: middle; font: 600 21px var(--font-sans); }
+.dependency .labels { fill: var(--ink-soft); font: 18px var(--font-sans); }
 .evidence .copy { position:absolute; left:7em; right:7em; top:50%; translate:0 -50%; }
 .evidence .eyebrow { font: 500 1.4em "JetBrains Mono",monospace; color:var(--ink-soft); margin-bottom:1.4em; }
 .evidence h2 { font-size:5.2em; font-weight:500; letter-spacing:-.035em; line-height:1.05; }
@@ -275,7 +274,7 @@ body:has(.conference.present) #counter { visibility:hidden; }
 .reveal .audience-film h2 { font-size:clamp(32px,5.4vw,96px); font-weight:500; line-height:1.05; letter-spacing:-.045em; }
 .reveal .audience-film .video-description { font-size:clamp(16px,1.65vw,30px); line-height:1.5; max-width:51ch; color:var(--ink-soft); margin-top:1.2em; }
 .audience-film .video-actions { display:flex; flex-wrap:wrap; gap:16px; margin-top:clamp(20px,2.6vw,48px); }
-.audience-film button { font:600 clamp(16px,1.25vw,24px)/1.3 "Schibsted Grotesk",sans-serif; padding:.85em 1.2em; min-height:48px; border:1px solid var(--line); border-radius:8px; cursor:pointer; background:transparent; color:var(--ink); }
+.audience-film button { font:600 clamp(16px,1.25vw,24px)/1.3 var(--font-sans); padding:.85em 1.2em; min-height:48px; border:1px solid var(--line); border-radius:8px; cursor:pointer; background:transparent; color:var(--ink); }
 .audience-film [data-play-film] { background:var(--cursor); color:#090909; border-color:var(--cursor); }
 .audience-film [data-play-film] span { margin-right:.6em; }
 .audience-film button:hover { filter:brightness(1.15); }
@@ -289,7 +288,7 @@ body:has(.conference.present) #counter { visibility:hidden; }
 #deck-version:hover { opacity:.7; }
 
 /* Slide 22: name the development workflow before its principles. */
-#slide-17c .workflow-title { font: 500 2.2em/1.3 "Schibsted Grotesk", sans-serif; letter-spacing: -.02em; max-width: none; margin-bottom: 1em; color: var(--ink-soft); }
+#slide-17c .workflow-title { font: 500 2.2em/1.3 var(--font-sans); letter-spacing: -.02em; max-width: none; margin-bottom: 1em; color: var(--ink-soft); }
 #slide-17c .workflow-principles { font-weight: 500; font-size: 5.4em; line-height: 1.1; letter-spacing: -.04em; max-width: 15.5em; text-wrap: balance; }
 
 /* Accepted talk review: the story is the headline; the prompt is evidence. */
