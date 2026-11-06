@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 
 ROOT=Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve()
-BANNED=re.compile(r'(^|/)(learn|rehearsal|audience-collector|\.env|speaker-notes|notes)([./-]|$)|\.bak(?:\.|$)|\.map$|\.pptx$',re.I)
+BANNED=re.compile(r'(^|/)(learn|rehearsal|audience-collector|presentation-remote|presenter-remote|remote|\.env|speaker-notes|notes)([./-]|$)|\.bak(?:\.|$)|\.map$|\.pptx$',re.I)
 TOP={'audience-video.js','index.html','deck.css','deck.js','cursor.js','README.md','.nojekyll','public-manifest.json','THIRD_PARTY.md','scripts/validate.py','.github/workflows/pages.yml'}
 def check(condition,message):
  if not condition:raise SystemExit('PUBLIC EXPORT CHECK FAILED: '+message)
@@ -45,6 +45,6 @@ for name in sorted(actual):
   for ref in re.findall(r'url\(\s*[\'"]?([^\)\'"\s]+)',p.read_text()):local(ref,p)
  if p.suffix in {'.html','.css','.js','.svg','.md','.yml','.json'} and name!='scripts/validate.py':
   t=p.read_text()
-  check(not re.search(r'(/opt/|/home/admin/|wowmoments\.firebots\.cloud/(?:jfall|next)|rehearsal\.html|speaker-notes\.(?:json|md)|learn/cards\.json|Suggested speaker words|Delivery guidance)',t),'presenter content in '+name)
+  check(not re.search(r'(/opt/|/home/admin/|wowmoments\.firebots\.cloud/(?:jfall|next)|rehearsal\.html|speaker-notes\.(?:json|md)|learn/cards\.json|presenter-remote|/jfall/remote|Suggested speaker words|Delivery guidance)',t),'presenter content in '+name)
   if name in {'index.html','deck.js','cursor.js'}:check('RevealNotes' not in t and '/plugin/notes/' not in t,'notes plugin remains')
 print(f"Audience export verified: {manifest['slides']} slides, {len(actual)} files; no presenter files or missing local assets.")
