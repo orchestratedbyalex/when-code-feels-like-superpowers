@@ -156,8 +156,8 @@
       if (i >= steps) { clearInterval(fadeTimer); fadeTimer = null; songAudio.volume = target; if (onComplete) onComplete(); }
     }, 16);
   }
-  const crossfadeToCue = t => fadeVolume(0, FADE_MS_CUE, () => { songAudio.currentTime = t; fadeVolume(1, FADE_MS_CUE); });
-  let playToken = 0;
+  const crossfadeToCue = (t, h) => fadeVolume(0, FADE_MS_CUE, () => { songAudio.currentTime = t; songPositionSlide = h; fadeVolume(1, FADE_MS_CUE); });
+  let playToken = 0, songPositionSlide = null;
   const fadeOutAndPause = () => { playToken++; fadeVolume(0, FADE_MS_OUT, () => { songAudio.pause(); songAudio.volume = 1; }); };
 
   // --- bass → --b: AnalyserNode on the audio element, created on the first M (needs a gesture) ---
@@ -184,28 +184,42 @@
       } catch (e) { console.warn('no analyser:', e); }
     }
     if (ctx) ctx.resume().catch(() => {});
+    return ctx;
   }
   function start() { if (!analyser) return; stage.classList.add('live'); tick(); }
   songAudio.addEventListener('pause', stop);
 
   Reveal.on('slidechanged', e => {
     const h = e.indexh;
-    if (!songAudio.paused && Song.cueFor(h) !== undefined) crossfadeToCue(Song.cueFor(h));   // forward or backward: re-cue
+    if (!songAudio.paused && Song.cueFor(h) !== undefined) {
+      songPositionSlide = null; // Pausing during the fade must not lose the new cue.
+      crossfadeToCue(Song.cueFor(h), h);                                    // forward or backward: re-cue
+    } else if (!songAudio.paused && Song.inRange(h)) songPositionSlide = h;
     if (!songAudio.paused && !Song.inRange(h)) fadeOutAndPause();
   });
-  function toggleSong() {
+  function playSong() {
     const h = Reveal.getIndices().h;
-    if (songAudio.paused && !Song.inRange(h)) return;                        // M starts only inside the song, but always stops it
+    if (!Song.inRange(h)) return Promise.reject(new Error('Not a song slide'));
     if (songAudio.paused) {
       ensureCtx();                                                           // created + resumed synchronously in the gesture (Safari)
-      songAudio.currentTime = Song.cueFor(h) ?? Song.cueFor(Song.range()[0]);
+      if (songPositionSlide !== h || songAudio.ended) {
+        let cue = Song.cueFor(Song.range()[0]);
+        for (let i = Song.range()[0]; i <= h; i++) cue = Song.cueFor(i) ?? cue;
+        songAudio.currentTime = cue;
+      }
+      songPositionSlide = h;
       songAudio.volume = 0;
       const token = ++playToken;
-      songAudio.play().then(() => {
+      return songAudio.play().then(() => {
         if (token !== playToken || songAudio.paused || !Song.inRange(Reveal.getIndices().h)) return;
         fadeVolume(1, FADE_MS_IN); start();
-      }).catch(err => console.warn('play blocked:', err));
-    } else fadeOutAndPause();
+      });
+    }
+    return Promise.resolve();
+  }
+  function toggleSong() {
+    if (songAudio.paused) { if (Song.inRange(Reveal.getIndices().h)) playSong().catch(err => console.warn('play blocked:', err)); }
+    else fadeOutAndPause();
   }
   // Full film: playback starts only on an explicit viewer action.
   const films = [...document.querySelectorAll('video[data-film]')];
@@ -241,5 +255,5 @@
   });
   window.Song = Song;
 
-  window.Deck = { setTheme };
+  window.Deck = { setTheme, media: { playSong, pauseSong: stopSongNow, ensureAudio: ensureCtx, audioContext: () => ctx } };
 })();
