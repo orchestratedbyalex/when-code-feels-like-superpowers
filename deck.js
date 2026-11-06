@@ -191,6 +191,7 @@
 
   Reveal.on('slidechanged', e => {
     const h = e.indexh;
+    if (songAudio.paused || !Song.inRange(h)) songPositionSlide = null;
     if (!songAudio.paused && Song.cueFor(h) !== undefined) {
       songPositionSlide = null; // Pausing during the fade must not lose the new cue.
       crossfadeToCue(Song.cueFor(h), h);                                    // forward or backward: re-cue
