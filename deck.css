@@ -306,3 +306,11 @@ body:has(.conference.present) #counter { visibility:hidden; }
 #slide-06 .step-detail { margin-top: .9em; font-size: 2em; line-height: 1.55; color: var(--ink-soft); }
 #slide-06 .step-note { margin-top: .7em; font-size: 1.2em; color: var(--dim); }
 #slide-06 .song-steps li:not(:last-child)::after { content: '→'; position: absolute; right: -1.25em; top: 2.1em; font-size: 2.7em; color: var(--cursor); }
+
+/* PINCER: leave a clear, scannable repository QR beside the principles. */
+#slide-17c .copy { width: 61em; }
+#slide-17c .workflow-principles { font-size: 4.2em; line-height: 1.25; max-width: none; text-wrap: initial; }
+#slide-17c .url { font-size: 1.5em; }
+#slide-17c .workflow-qr { position: absolute; right: 7em; top: 50%; translate: 0 -50%; width: 20em; text-align: center; color: var(--ink-soft); text-decoration: none; }
+#slide-17c .workflow-qr img { display: block; width: 100%; height: auto; background: white; }
+#slide-17c .workflow-qr span { display: block; margin-top: .8em; font-size: 1.35em; }
