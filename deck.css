@@ -314,3 +314,10 @@ body:has(.conference.present) #counter { visibility:hidden; }
 #slide-17c .workflow-qr { position: absolute; right: 7em; top: 50%; translate: 0 -50%; width: 20em; text-align: center; color: var(--ink-soft); text-decoration: none; }
 #slide-17c .workflow-qr img { display: block; width: 100%; height: auto; background: white; }
 #slide-17c .workflow-qr span { display: block; margin-top: .8em; font-size: 1.35em; }
+
+/* Current deployed model labels; keep the action above the model name. */
+.dependency.model-pipeline .box text { font-size: 18px; }
+.dependency.model-pipeline .box text.model { font-size: 16px; font-weight: 500; fill: var(--ink-soft); }
+.dependency.model-pipeline .box text.small { font-size: 14px; }
+.diagram .model-date { font-size: .72em; color: var(--ink-soft); }
+#slide-17c .workflow-floor { font-size: 1.8em; line-height: 1.4; color: var(--ink-soft); margin-top: 1.2em; }
