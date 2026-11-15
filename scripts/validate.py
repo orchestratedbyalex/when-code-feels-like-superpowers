@@ -45,6 +45,6 @@ for name in sorted(actual):
   for ref in re.findall(r'url\(\s*[\'"]?([^\)\'"\s]+)',p.read_text()):local(ref,p)
  if p.suffix in {'.html','.css','.js','.svg','.md','.yml','.json'} and name!='scripts/validate.py':
   t=p.read_text()
-  check(not re.search(r'(/opt/|/home/admin/|wowmoments\.firebots\.cloud/(?:jfall|next)|rehearsal\.html|speaker-notes\.(?:json|md)|learn/cards\.json|presenter-(?:remote|media)|/jfall/remote|Suggested speaker words|Delivery guidance)',t),'presenter content in '+name)
+  check(not re.search(r'(/opt/|/home/admin/|wowmoments\.firebots\.cloud/|rehearsal\.html|speaker-notes\.(?:json|md)|learn/cards\.json|presenter-(?:remote|media)|Suggested speaker words|Delivery guidance)',t),'presenter content in '+name)
   if name in {'index.html','deck.js','cursor.js'}:check('RevealNotes' not in t and '/plugin/notes/' not in t,'notes plugin remains')
 print(f"Audience export verified: {manifest['slides']} slides, {len(actual)} files; no presenter files or missing local assets.")

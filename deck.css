@@ -119,7 +119,6 @@ html, body, .reveal, .reveal .slides { background: var(--bg); }
 .end h2 { font-weight: 500; font-size: 8.6em; line-height: 1; letter-spacing: -.04em; }
 .end .handles { display: grid; grid-template-columns: max-content 1fr; gap: .5em 2em; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 1.9em; }
 .end .handles .k { color: var(--dim); }
-.end .session-rating { font-size: 2.4em; line-height: 1.35; color: var(--dim); margin: 0; }
 .end .qr { position: absolute; right: 7em; top: 50%; translate: 0 -50%; width: 22em; height: 22em; padding: 1.4em; background: var(--ink); }
 .end .qr img { width: 100%; height: 100%; display: block; filter: invert(1); }
 
@@ -230,7 +229,7 @@ html.theme-gold .legend .ai::before { background: var(--cursor); border-color: v
 .rule .a { font-weight: 500; font-size: 4.2em; line-height: 1.1; letter-spacing: -.04em; }
 .rule.present .copy { animation: rise .7s cubic-bezier(.16, 1, .3, 1) backwards; }
 
-/* J-Fall revision: preserve the original palette, typography and cursor. */
+
 .film .missing { color: var(--ink); }
 .dependency { width: 100%; height: auto; align-self: center; overflow: visible; color: var(--ink-soft); }
 .dependency .edges { fill: none; stroke: var(--ink-soft); stroke-width: 2; }
@@ -256,16 +255,7 @@ html.theme-gold .legend .ai::before { background: var(--cursor); border-color: v
 
 #help a { color:var(--ink); text-decoration:underline; }
 
-/* Official conference bookends: original PPT artwork, independent of the talk palette. */
-.conference .stage { background:#06151c; color:#99bcce; font-family:Arial,sans-serif; }
-.conference .conference-art { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; max-width:none; max-height:none; margin:0; border:0; }
-.conference .conference-copy { position:absolute; left:5em; right:5em; top:12.5em; text-align:center; }
-.reveal .conference h1, .reveal .conference h2 { font-size:4.6em; font-weight:700; line-height:1.12; letter-spacing:-.025em; color:#99bcce; text-shadow:0 .04em .2em #000; }
-.reveal .conference .conference-speaker { font-size:2.8em; font-weight:700; margin-top:.5em; }
-.reveal .conference .conference-request { font-size:3em; font-weight:700; margin-top:.8em; line-height:1.25; }
-.reveal .conference .conference-rating { position:absolute; right:3em; bottom:3em; font-size:1.7em; text-align:right; color:#fff; }
-.reveal .conference .conference-hashtag { position:absolute; right:3em; bottom:2.8em; font-size:1.7em; color:#fff; }
-body:has(.conference.present) #counter { visibility:hidden; }
+
 
 /* Public audience video: choose to watch or skip, with native player controls. */
 .audience-film .video-intro { position:absolute; inset:0; z-index:2; display:flex; align-items:center; justify-content:center; padding:5vw; background:var(--bg); }

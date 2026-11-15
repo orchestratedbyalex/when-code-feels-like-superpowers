@@ -7,4 +7,4 @@
 
 Font license texts are from the corresponding [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl) directories.
 
-J-Fall conference artwork and sponsor marks are supplied by the event organizers. Photographs, music, recordings and screenshots are part of the presentation; the library/font licenses do not grant reuse rights to that material.
+Photographs, music, recordings and screenshots are part of the presentation; the library/font licenses do not grant reuse rights to that material.

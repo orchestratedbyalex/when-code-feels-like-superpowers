@@ -1,6 +1,6 @@
 # When code feels like superpowers
 
-A talk by **Alexander Gomez**, prepared for J-Fall 2026.
+A talk by **Alexander Gomez**.
 
 **[Open the slides](https://orchestratedbyalex.github.io/when-code-feels-like-superpowers/)**
 
@@ -13,7 +13,7 @@ The talk follows personal projects built with coding agents, live demonstrations
 - **M:** play or pause the current song or film. Browsers may require this first interaction before audio plays.
 - **F:** fullscreen. **Esc:** slide overview. **P:** change palette. **?:** controls.
 
-The slides use a 16:9 layout. Recorded audio and video are included. Slide 20 offers the full 3:04 EMX walkthrough: choose **Play full video** to watch, or **Skip video** to continue. It does not autoplay, and there is no shorter-cut alternative below it. Live demonstrations are represented by their slides and recorded examples; this repository does not run those applications. The Spotify embed needs an internet connection.
+The slides use a 16:9 layout. Recorded audio and video are included. The EMX walkthrough slide offers the full 3:04 recording: choose **Play full video** to watch, or **Skip video** to continue. It does not autoplay, and there is no shorter-cut alternative below it. Live demonstrations are represented by their slides and recorded examples; this repository does not run those applications. The Spotify embed needs an internet connection.
 
 To view locally, download or clone this repository and run:
 
@@ -32,6 +32,6 @@ Then open `http://localhost:8000` in your browser.
 
 This repository contains the generated audience edition. Updates are published from the maintained presentation; changes should be made there and exported again. Each push to `main` validates the export and deploys GitHub Pages.
 
-The repository and site intentionally exclude presenter scripts and rehearsal material. The version actually delivered at J-Fall can be tagged `jfall-2026` after the event; no such tag is claimed yet.
+The repository and site intentionally exclude presenter scripts, rehearsal material and event-specific opening and closing slides.
 
-See [third-party notices](THIRD_PARTY.md) for bundled library and font licenses. Conference branding and logos remain the property of their respective owners; no blanket license is granted for all presentation media.
+See [third-party notices](THIRD_PARTY.md) for bundled library and font licenses. No blanket license is granted for all presentation media.
